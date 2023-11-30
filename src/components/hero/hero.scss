@@ -1,0 +1,207 @@
+@import "./../../app.scss";
+
+.hero {
+    height: calc(100vh - 100px);
+    overflow: hidden;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+    position: relative;
+
+    .imgContainer {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+
+        img {
+            width: 100%;
+            scale: 0.8;
+            object-fit: cover;
+        }
+
+        @include mobile {
+            height: 50%;
+            width: 100%;
+            top: unset;
+            bottom: 0;
+            left: 0;
+            right: unset;
+
+            img {
+                scale: 1;
+            }
+        }
+
+    }
+
+    .wrapper {
+        max-width: 1366px;
+        height: 100%;
+        margin: auto;
+
+        .textContainer {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            gap: 1.3rem;
+            justify-content: center;
+            // align-items: center;
+            gap: 3rem;
+
+            @include mobile {
+                // margin: 50px 20px auto ;
+                height: 50%;
+                width: 100%;
+                gap: 1.5rem;
+                align-items: center;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 4rem;
+                width: 60%;
+
+                @include mobile {
+                    width: 100%;
+                    font-size: 2.5rem;
+
+                }
+            }
+
+            h2 {
+                font-size: 2.8rem;
+                color: #ff3366;
+            }
+
+            img {
+                width: 50px;
+            }
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+
+                button {
+                    padding: 0.8rem 1rem;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    color: #111132;
+                    font-weight: 300;
+                    margin-right: 20px;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+
+                button:first-child {
+                    background-color: transparent;
+                    color: white;
+                }
+
+                a {
+                    z-index: 222;
+                    position: relative;
+                    display: inline-block;
+                    padding: 0.8rem 1rem;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.2rem;
+                    overflow: hidden;
+                    transition: 0.2s;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    // border: 1px solid #ffffff;
+                }
+
+                a:hover {
+                    border: none;
+                    color: rgb(72, 71, 71);
+                    background: #fffffb;
+                    box-shadow: 0 0 10px #fffffb, 0 0 40px #fffffc, 0 0 80px #fffffd;
+                    transition-delay: 1s;
+                }
+
+                a span {
+                    position: absolute;
+                    display: block;
+                }
+
+                a span:nth-child(1) {
+                    top: 0;
+                    left: -100%;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(90deg, transparent, #fffffb);
+                }
+
+                a:hover span:nth-child(1) {
+                    left: 100%;
+                    transition: 1s;
+                }
+
+                a span:nth-child(3) {
+                    bottom: 0;
+                    right: -100%;
+                    width: 100%;
+                    height: 2px;
+                    background: linear-gradient(270deg, transparent, #fffffb);
+                }
+
+                a:hover span:nth-child(3) {
+                    right: 100%;
+                    transition: 1s;
+                    transition-delay: 0.5s;
+                }
+
+
+
+                a span:nth-child(2) {
+                    top: -100%;
+                    right: 0;
+                    width: 2px;
+                    height: 100%;
+                    background: linear-gradient(180deg, transparent, #fffffd);
+                }
+
+                a:hover span:nth-child(2) {
+                    top: 100%;
+                    transition: 1s;
+                    transition-delay: 0.25s;
+                }
+
+
+
+                a span:nth-child(4) {
+                    bottom: -100%;
+                    left: 0;
+                    width: 2px;
+                    height: 100%;
+                    background: linear-gradient(360deg, transparent, #fffffc);
+                }
+
+                a:hover span:nth-child(4) {
+                    bottom: 100%;
+                    transition: 1s;
+                    transition-delay: 0.75s;
+                }
+
+
+
+            }
+        }
+
+
+    }
+
+    .slidingTextContainer {
+        position: absolute;
+        font-size: 50vh;
+        bottom: -120px;
+        white-space: nowrap;
+        // z-index: -1;
+        color: #ffffff09;
+
+    }
+}
